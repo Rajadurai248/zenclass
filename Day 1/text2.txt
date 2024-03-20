@@ -1,0 +1,9 @@
+http 1.1
+
+  * It's like waiting in line at a store where only one person can be served at a time. Everything on the web page loads one after another, like waiting for each person to finish before the next one can be helped.
+  * Every time you ask for something, you have to say who you are and what you want, even if you've said it before. It's like repeating yourself a lot, which can slow things down.
+
+http 2
+
+  *It's like having multiple cashiers at the store, so everyone can be served at once. Instead of waiting for one thing to finish, everything loads together, making it much faster.
+  *With HTTP/2, you don't have to repeat yourself so much. It's like using shortcuts to save time and get things done faster.
