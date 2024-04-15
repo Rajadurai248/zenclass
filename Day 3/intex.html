@@ -1,0 +1,51 @@
+$<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <script>
+        let obj1 = { name: "person1", age: 5 };
+        let obj2 = { age: 5, name: "person1" };
+  
+        // Step 1: Convert objects to strings
+        let obj1String = JSON.stringify(obj1);
+        let obj2String = JSON.stringify(obj2);
+  
+        // Step 2: Sort properties within strings
+        let sortedObj1String = sortProperties(obj1String);
+        let sortedObj2String = sortProperties(obj2String);
+  
+        // Step 3: Compare sorted strings
+        if (sortedObj1String === sortedObj2String) {
+          console.log("The JSON objects are equivalent.");
+        } else {
+          console.log("The JSON objects are not equivalent.");
+        }
+  
+        function sortProperties(objString) {
+          let obj = JSON.parse(objString);
+          let sortedObj = {};
+          Object.keys(obj)
+            .sort()
+            .forEach((key) => {
+              sortedObj[key] = obj[key];
+            });
+          return JSON.stringify(sortedObj);
+  
+       
+        }
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
